@@ -50,7 +50,7 @@ class HomeController extends Controller
                 if (\Carbon\Carbon::parse($str)->format('m')!=\Carbon\Carbon::now()->format('m')){
                     $dataProduksi->addRow([$str,$sum]);
                 }
-                  $str = $stock->date;  
+                  $str = $stock->date;
                   $sum = $stock->stock_quantity;
             } else{
                 $sum += $stock->stock_quantity;
@@ -58,7 +58,7 @@ class HomeController extends Controller
         }
         $dataProduksi->addRow([$str,$sum]);
         $lava->LineChart('Temps', $dataProduksi, [
-            'title' => 'grafik data produksi'
+            'title' => 'Grafik Data Produksi'
         ]);
         return View('home',['produk'=>$produk,'demand'=>$permintaan,'lava'=>$lava]);
     }

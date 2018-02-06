@@ -128,7 +128,7 @@ class StockController extends Controller
         ]);
         Stock::find($stock_id)->update($request->all());
         return redirect()->route('stock.index')
-                        ->with('success','Item updated successfully');
+                        ->with('success','Stok produk berhasil di-update');
     }
     /**
      * Remove the specified resource from storage.
@@ -147,6 +147,6 @@ class StockController extends Controller
     {
         Stock::find($stock_id)->delete();
         return redirect()->route('stock.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Stok produk berhasil dihapus');
     }
 }

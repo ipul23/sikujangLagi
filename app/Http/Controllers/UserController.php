@@ -63,7 +63,7 @@ class UserController extends Controller
             'password' => bcrypt($request['password']),
         ]);
         return redirect()->route('user.index')
-                        ->with('success','Item created successfully');
+                        ->with('success','Data berhasil ditambahkan');
     }
 
     /**
@@ -88,6 +88,6 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('user.index')
-                        ->with('success','Karyawan deleted successfully');
+                        ->with('success','Karyawan berhasil dihapus');
     }
 }

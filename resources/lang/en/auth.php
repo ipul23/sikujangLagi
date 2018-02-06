@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'failed' => 'The email or password you entered is incorect. Please try again',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    //'failed' => 'The email or password you entered is incorect. Please try again',
+    //'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'Emai atau password yang Anda masukkan salah. Silahkan coba lagi',
+    'throttle' => 'Anda terlalu sering mencoba untuk login. Silahkan coba lagi dalam :seconds detik.',
 ];

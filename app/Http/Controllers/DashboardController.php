@@ -37,9 +37,9 @@ class DashboardController extends Controller {
 			}
 			$dataProduksi->addRow(['$i',$sum]);
 		}
-		
+
 		$lava->LineChart('Temps', $dataProduksi, [
-		    'title' => 'grafik data produksi'
+		    'title' => 'Grafik Data Produksi'
 		]);
 		foreach(\App\stock::all() as $stock){
 			$inisiasi = DB::table('stocks')->where('stage',$stock->Inisiasi)->where('created_at','LIKE','%'.$stock->created_at->format('Y-m-d').'%')->count();

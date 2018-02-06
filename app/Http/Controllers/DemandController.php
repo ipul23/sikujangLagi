@@ -68,7 +68,7 @@ class DemandController extends Controller
         demand::find($demand->demand_id)->update(['demand_price'=>$price]);
         demand::find($demand->demand_id)->update(['date'=>$l10nDate]);
         return redirect()->route('demand.show',$demand->demand_id)
-                        ->with('success','Item created successfully');
+                        ->with('success','Data berhasil ditambahkan');
     }
 
     /**
@@ -113,7 +113,7 @@ class DemandController extends Controller
 
         demand::find($demand_id)->update($request->all());
         return redirect()->route('demand.index')
-                        ->with('success','Item updated successfully');
+                        ->with('success','Data berhasil di-update');
     }
 
 
@@ -127,6 +127,6 @@ class DemandController extends Controller
     {
         demand::find($demand_id)->update(['demand_status'=>0]);
         return redirect()->route('demand.index')
-                        ->with('success','Product update successfully');
+                        ->with('success','Data berhasil dihapus');
     }
 }

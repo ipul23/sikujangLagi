@@ -32,7 +32,7 @@ class ChartProduksiController extends Controller
 	            		$sum1 = $stock->stock_quantity;
 	            		$i++;
 	        			\Lava::LineChart($i.'div', $dataProduksi, [
-	            			'title' => 'Grafik data produksi tahun '.$year
+	            			'title' => 'Grafik Data Produksi Tahun '.$year
 	        			]);
 	        			$year = \Carbon\Carbon::parse($stock->date)->format('Y');
 	        			$dataProduksi = \Lava::DataTable();
@@ -63,13 +63,13 @@ class ChartProduksiController extends Controller
 	        }
 	        $dataProduksi->addRow([\DateTime::createFromFormat('!m', $month)->format('F'),$sum]);
 	        $TabelProduksi->addRow([$year,$sum1]);
-	        $i++;	
+	        $i++;
 	        \Lava::LineChart($i.'div', $dataProduksi, [
-	            'title' => 'Grafik data produksi tahun '.$year
+	            'title' => 'Grafik Data Produksi Tahun '.$year
 	        ]);
 	        $i++;
 	        \Lava::ColumnChart($i.'div', $TabelProduksi, [
-	            'title' => 'Grafik data produksi tahun '.$years.'-'.$year
+	            'title' => 'Grafik Data Produksi Tahun '.$years.'-'.$year
 	        ]);
 
         return View('grafik.produksi',['i'=>$i]);
